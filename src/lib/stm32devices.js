@@ -218,6 +218,15 @@ export default [
                 ],
             },
             {
+                'dev_id': 0x242,
+                'flash_size_reg': 0x1ffff7e0,
+                'flash_driver': 'STM32FP',
+                'erase_sizes': [2048],
+                'devices': [
+                    {'type': 'AT32F403xC', 'flash_size':  256, 'sram_size':  64, 'eeprom_size':  0, 'freq':  36},
+                ],
+            },
+            {
                 'dev_id': 0x416,
                 'flash_size_reg': 0x1ff8004c,
                 'flash_driver': null,
