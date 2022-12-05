@@ -4,7 +4,7 @@ webstlink
 ---------
 webstlink is a port of [pystlink](https://github.com/pavelrevak/pystlink), using the [WebUSB](https://wicg.github.io/webusb/) API as a backend to control ST-Link/V2 and ST-Link/V2-1 debug probes from the browser.
 
-Check out the live demo [online](https://candas1.github.io/webstlink/)
+Check out the live demo [online](https://candas1.github.io/webstlink/) ([video](https://www.youtube.com/watch?v=NmIKtWMw-jw))
 
 Tested features
 ---------------
