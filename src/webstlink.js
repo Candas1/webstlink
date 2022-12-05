@@ -8,7 +8,7 @@
  *
  */
 
-import * as libstlink from './src/lib/package.js';
+import * as libstlink from './lib/package.js';
 import Mutex from './mutex.js';
 import {
     hex_word as H32,
