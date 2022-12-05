@@ -1,6 +1,6 @@
 import * as libstlink from './src/lib/package.js';
 import WebStlink from './src/webstlink.js';
-import { hex_octet, hex_word, hex_octet_array } from '../src/lib/util.js';
+import { hex_octet, hex_word, hex_octet_array } from './src/lib/util.js';
 import cs from './capstone-arm.min.js';
 
 function fetchResource(url) {
