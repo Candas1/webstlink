@@ -1,5 +1,12 @@
-### I tinkered to get the demo directly hosted on github pages, and added support for AT32403RCT6 chip from Artery which is a faster clone of STM32F103RCT6.
-So you can run it directly from [here](https://candas1.github.io/webstlink/) without any installation ([video](https://www.youtube.com/watch?v=NmIKtWMw-jw)).
+My changes:
+* Demo of master branch directly hosted on github pages, so you can run it directly from [here](https://candas1.github.io/webstlink/), you need to enable github pages on the root folder if you fork this repository
+* Simplified the demo to only connect, display memory and flash
+* Added support for AT32403RCT6 chip from Artery which is a faster clone of STM32F103RCT6
+
+To do:
+* Flashing sometimes fails, but succeeds the next time, check the latest fixes in pystlink
+* Test if unlock also works on various chips
+* Should we be able to set option bytes ? It can be a problem on GD32 chips because of the hardware watchdog (see [Openocd comments](https://github.com/openocd-org/openocd/blob/9501b263e0ae127b012f5c5e3ba5dffcc7daa8d1/src/flash/nor/stm32f1x.c#L875))
 
 webstlink
 ---------
