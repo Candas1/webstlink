@@ -1,8 +1,11 @@
+### I tinkered to get the demo directly hosted on github pages, and added support for AT32403RCT6 chip from Artery which is a faster clone of STM32F103RCT6.
+So you can run it directly from [here](https://candas1.github.io/webstlink/) without any installation ([video](https://www.youtube.com/watch?v=NmIKtWMw-jw)).
+
 webstlink
 ---------
 webstlink is a port of [pystlink](https://github.com/pavelrevak/pystlink), using the [WebUSB](https://wicg.github.io/webusb/) API as a backend to control ST-Link/V2 and ST-Link/V2-1 debug probes from the browser.
 
-Check out the live demo [online](https://candas1.github.io/webstlink/)
+Check out the live demo [online](https://devanlai.github.io/webstlink/demo/) 
 
 Tested features
 ---------------
