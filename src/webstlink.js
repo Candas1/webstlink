@@ -552,6 +552,8 @@ export default class WebStlink {
                 verify: true,
                 erase_sizes: this._mcus_by_devid.erase_sizes
             });
+            await this._driver.core_reset_halt();
+            await this._driver.core_run();
             this._cache.invalidate_registers();
             await this._unsafe_inspect_cpu(true);
         } finally {

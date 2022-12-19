@@ -11,7 +11,7 @@
 
 export default [
     {
-        'part_no': 0xc20,
+        'part_no': 0x000, //0xc20,
         'core': 'CortexM0',
         'idcode_reg': 0x40015800,
         'devices': [
@@ -77,6 +77,39 @@ export default [
                     {'type': 'STM32F072x8', 'flash_size':   64, 'sram_size':  16, 'eeprom_size':  0, 'freq':  48},
                     {'type': 'STM32F072xB', 'flash_size':  128, 'sram_size':  16, 'eeprom_size':  0, 'freq':  48},
                     {'type': 'STM32F078xB', 'flash_size':  128, 'sram_size':  16, 'eeprom_size':  0, 'freq':  48},
+                ],
+            },
+        ],
+    },
+    {
+        'part_no': 0x000, //0xc20, // TEST MM32
+        'core': 'CortexM0',
+        'idcode_reg': 0x40013400,
+        'devices': [
+            {
+                'dev_id': 0x071,
+                'flash_size_reg': 0x1ffff7cc,
+                'flash_driver': 'STM32FP',
+                'erase_sizes': [1024],
+                'devices': [
+                    {'type': 'MM32F030x6', 'flash_size':   32, 'sram_size':   4, 'eeprom_size':  0, 'freq':  48},
+                    {'type': 'MM32F031x6', 'flash_size':   65535, 'sram_size':   4, 'eeprom_size':  0, 'freq':  48},
+                ],
+            },
+        ],
+    },
+    {
+        'part_no': 0xc20,
+        'core': 'CortexM0',
+        'idcode_reg': 0x1FFFF7F0,
+        'devices': [
+            {
+                'dev_id': 0x200, // for AT32F413RCT7
+                'flash_size_reg': 0x1ffff7e0,
+                'flash_driver': 'STM32FPXL',
+                'erase_sizes': [1024],
+                'devices': [
+                    {'type': 'AT32F413xC', 'flash_size':  1472, 'sram_size':  64, 'eeprom_size':  0, 'freq':  72},
                 ],
             },
         ],
@@ -166,6 +199,8 @@ export default [
                     {'type': 'STM32F102xB', 'flash_size':  128, 'sram_size':  16, 'eeprom_size':  0, 'freq':  48},
                     {'type': 'STM32F103x8', 'flash_size':   64, 'sram_size':  20, 'eeprom_size':  0, 'freq':  72},
                     {'type': 'STM32F103xB', 'flash_size':  128, 'sram_size':  20, 'eeprom_size':  0, 'freq':  72},
+                    {'type': 'GD32F130C6T6' , 'flash_size':  32 , 'sram_size':  4 , 'eeprom_size':  0, 'freq':  48},
+                    {'type': 'GD32F130C6T8' , 'flash_size':  64 , 'sram_size':  8 , 'eeprom_size':  0, 'freq':  48},
                 ],
             },
             {
@@ -591,6 +626,15 @@ export default [
                 'erase_sizes': [2048,2048],
                 'devices': [
                     {'type': 'AT32F403xC', 'flash_size':  256, 'sram_size':  64, 'eeprom_size':  0, 'freq':  72},
+                ],
+            },
+            {
+                'dev_id': 0x240, // for AT32F413RCT7
+                'flash_size_reg': 0x1ffff7e0,
+                'flash_driver': 'STM32FP',
+                'erase_sizes': [512],
+                'devices': [
+                    {'type': 'AT32F413xC', 'flash_size':  65535, 'sram_size':  64, 'eeprom_size':  0, 'freq':  72},
                 ],
             },
         ],

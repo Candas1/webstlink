@@ -187,7 +187,12 @@ export default class Stlink {
 
     async read_coreid() {
         let rx = await this._connector.xfer([STLINK_DEBUG_COMMAND, STLINK_DEBUG_READCOREID], {"rx_len": 4});
-        this._coreid = rx.getUint32(0, true);
+        if (rx.byteLength < 4){
+            this._coreid = 0;
+        }else{
+            this._coreid = rx.getUint32(0, true);
+        }
+        
     }
 
     get coreid() {

@@ -84,8 +84,15 @@ class Flash {
         await this.unlock();
     }
 
+    async clear_sr() {
+        // clear errors
+        let sr = await this._stlink.get_debugreg32(this.FLASH_SR_REG);
+        await this._stlink.set_debugreg32(this.FLASH_SR_REG, sr);
+    }
+
     async unlock() {
         await this._driver.core_halt();
+        await this.clear_sr();
         // programming locked
         let cr_reg = await this._stlink.get_debugreg32(this.FLASH_CR_REG);
         if (cr_reg & FLASH_CR_LOCK_BIT) {
@@ -258,7 +265,7 @@ class Stm32FP extends Stm32 {
             } else {
                 await flash.erase_all();
             }
-        }
+        }  
         this._dbg.bargraph_start("Writing FLASH", {"value_min": addr, "value_max": (addr + data.length)});
         await flash.init_write(Stm32FP.SRAM_START);
         while (data.length > 0) {
@@ -280,6 +287,7 @@ class Stm32FP extends Stm32 {
             }
             addr += block.length;
         }
+        //await this.wait_busy(0.001);
         await flash.lock();
         this._dbg.bargraph_done();
     }

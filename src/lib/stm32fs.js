@@ -147,8 +147,15 @@ class Flash {
         throw new Exception(`Supply voltage is ${voltage}V, but minimum for FLASH program or erase is 1.8V`);
     }
 
+    async clear_sr() {
+        // clear errors
+        let sr = await this._stlink.get_debugreg32(this.FLASH_SR_REG);
+        await this._stlink.set_debugreg32(this.FLASH_SR_REG, sr);
+    }
+
     async unlock() {
         await this._driver.core_reset_halt();
+        await this.clear_sr();
         // programming locked
         let cr_reg = await this._stlink.get_debugreg32(FLASH_CR_REG);
         if (cr_reg & FLASH_CR_LOCK_BIT) {
@@ -228,7 +235,7 @@ class Flash {
     }
 
     async wait_busy(wait_time, bargraph_msg = null) {
-        const end_time = (Date.now() + (wait_time * 3.5 * 1000));
+        const end_time = (Date.now() + (wait_time * 1.5 * 1000));
         if (bargraph_msg) {
             this._dbg.bargraph_start(bargraph_msg, {
                 "value_min": Date.now()/1000.0,
