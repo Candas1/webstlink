@@ -1,7 +1,7 @@
 My changes:
 * Demo of master branch directly hosted on github pages, so you can run it directly from [here](https://candas1.github.io/webstlink/), you need to enable github pages on the root folder if you fork this repository
 * Simplified the demo to only connect, display memory and flash
-* Added support for AT32403RCT6 chip from Artery which is a faster clone of STM32F103RCT6
+* Added support for AT32F403RCT6 chip from Artery which is a faster clone of STM32F103RCT6
 
 To do:
 * Flashing sometimes fails, but succeeds the next time, check the latest fixes in pystlink
